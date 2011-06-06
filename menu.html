@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <base href="." target="_parent" />
+  <title>Menu</title>
+  <link rel="stylesheet" type="text/css" href="./plone_files/public.css" />
+  <link rel="stylesheet" type="text/css" href="./plone_files/member.css" />
+
+  <script type="text/javascript" src="./plone_files/jquery.js"></script>
+  <script type="text/javascript" src="./plone_files/jquery-integration.js"></script>
+  <script type="text/javascript" src="./plone_files/++resource++plone.app.jquerytools.js"></script>
+  <script type="text/javascript" src="./plone_files/++resource++plone.app.jquerytools.overlayhelpers.js"></script>
+  <script type="text/javascript" src="./plone_files/++resource++plone.app.jquerytools.form.js"></script>
+  <script type="text/javascript" src="./plone_files/register_function.js"></script>
+  <script type="text/javascript" src="./plone_files/plone_javascript_variables.js"></script>
+  <script type="text/javascript" src="./plone_files/nodeutilities.js"></script>
+  <script type="text/javascript" src="./plone_files/cookie_functions.js"></script>
+  <script type="text/javascript" src="./plone_files/livesearch.js"></script>
+  <script type="text/javascript" src="./plone_files/select_all.js"></script>
+  <script type="text/javascript" src="./plone_files/dragdropreorder.js"></script>
+  <script type="text/javascript" src="./plone_files/collapsiblesections.js"></script>
+  <script type="text/javascript" src="./plone_files/form_tabbing.js"></script>
+  <script type="text/javascript" src="./plone_files/popupforms.js"></script>
+  <script type="text/javascript" src="./plone_files/input-label.js"></script>
+  <script type="text/javascript" src="./plone_files/jquery.highlightsearchterms.js"></script>
+  <script type="text/javascript" src="./plone_files/first_input_focus.js"></script>
+  <script type="text/javascript" src="./plone_files/accessibility.js"></script>
+  <script type="text/javascript" src="./plone_files/styleswitcher.js"></script>
+  <script type="text/javascript" src="./plone_files/toc.js"></script>
+  <script type="text/javascript" src="./plone_files/collapsibleformfields.js"></script>
+  <script type="text/javascript" src="./plone_files/sarissa.js"></script>
+  <script type="text/javascript" src="./plone_files/dropdown.js"></script>
+  <script type="text/javascript" src="./plone_files/table_sorter.js"></script>
+  <script type="text/javascript" src="./plone_files/calendar_formfield.js"></script>
+  <script type="text/javascript" src="./plone_files/formUnload.js"></script>
+  <script type="text/javascript" src="./plone_files/formsubmithelpers.js"></script>
+  <script type="text/javascript" src="./plone_files/unlockOnFormUnload.js"></script>
+  <script type="text/javascript" src="./plone_files/tiny_mce.js"></script>
+  <script type="text/javascript" src="./plone_files/++resource++kukit.js"></script>
+  <script type="text/javascript" src="./plone_files/tiny_mce_init.js"></script>
+  <script type="text/javascript" src="./plone_files/comments.js"></script>
+
+  
+</head>
+<body>
+                      <div id="edit-bar">
+
+
+
+          <h5 class="hiddenStructure">Views</h5>
+
+          <ul class="contentViews" id="content-views">
+
+
+                <li id="contentview-folderContents" class="plain">
+                  <a href="http://localhost:8080/Plone/folder_contents">Contents</a>
+                </li>
+
+
+                <li id="contentview-view" class="selected">
+                  <a href="http://localhost:8080/Plone/front-page">View</a>
+                </li>
+
+
+                <li id="contentview-edit" class="plain">
+                  <a href="http://localhost:8080/Plone/front-page/edit">Edit</a>
+                </li>
+
+
+                <li id="contentview-contentrules" class="plain">
+                  <a href="http://localhost:8080/Plone/@@manage-content-rules">Rules</a>
+                </li>
+
+
+                <li id="contentview-local_roles" class="plain">
+                  <a href="http://localhost:8080/Plone/front-page/@@sharing">Sharing</a>
+                </li>
+
+
+          </ul>
+
+
+
+
+  <div class="contentActions">
+
+
+
+
+
+
+
+          <ul id="contentActionMenus">
+
+      <li>
+
+          <dl class="actionMenu deactivated" id="plone-contentmenu-workflow">
+            <dt class="actionMenuHeader label-state-published">
+              <a href="http://localhost:8080/Plone/front-page/content_status_history" title="Change the state of this item">
+
+                    <span>State:</span>
+                    <span class="state-published">Published</span>
+                    <span class="arrowDownAlternative">▼</span>
+
+              </a>
+            </dt>
+            <dd class="actionMenuContent">
+              <ul>
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/front-page/content_status_modify?workflow_action=reject" class="kssIgnore" id="workflow-transition-reject" title="Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published.">
+
+                          <span class="subMenuTitle">Send back</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/front-page/content_status_modify?workflow_action=retract" class="kssIgnore" id="workflow-transition-retract" title="If you submitted the item by mistake or want to perform additional edits, this will take it back.">
+
+                          <span class="subMenuTitle">Retract</span>
+                      </a>
+
+                    </li>
+
+
+                    <li class="actionSeparator">
+                      <a href="http://localhost:8080/Plone/front-page/content_status_history" class="kssIgnore" id="advanced" title="">
+
+                          <span class="subMenuTitle">Advanced...</span>
+                      </a>
+
+                    </li>
+
+              </ul>
+            </dd>
+          </dl>
+
+      </li>
+      <li>
+
+          <dl class="actionMenu deactivated" id="plone-contentmenu-factories">
+            <dt class="actionMenuHeader label-">
+              <a href="http://localhost:8080/Plone/folder_factories" title="Add new items inside this item">
+
+                    <span>Add new…</span>
+
+                    <span class="arrowDownAlternative">▼</span>
+
+              </a>
+            </dt>
+            <dd class="actionMenuContent">
+              <ul>
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/createObject?type_name=Topic" class="contenttype-topic" id="topic" title="An always-updated saved search that can be used to display items matching criteria you specify.">
+
+                          <span class="subMenuTitle">Collection</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/createObject?type_name=Event" class="contenttype-event" id="event" title="Events can be shown in calendars.">
+
+                          <span class="subMenuTitle">Event</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/createObject?type_name=File" class="contenttype-file" id="file" title="Lets you upload a file to the site.">
+
+                          <span class="subMenuTitle">File</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/createObject?type_name=Folder" class="contenttype-folder" id="folder" title="">
+
+                          <span class="subMenuTitle">Folder</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/createObject?type_name=Image" class="contenttype-image" id="image" title="Images can be referenced in pages or displayed in an album.">
+
+                          <span class="subMenuTitle">Image</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/createObject?type_name=Link" class="contenttype-link" id="link" title="Links to an internal or external resource.">
+
+                          <span class="subMenuTitle">Link</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/createObject?type_name=News+Item" class="contenttype-news-item" id="news-item" title="An announcement that will show up in news listings.">
+
+                          <span class="subMenuTitle">News Item</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/createObject?type_name=Document" class="contenttype-document" id="document" title="">
+
+                          <span class="subMenuTitle">Page</span>
+                      </a>
+
+                    </li>
+
+              </ul>
+            </dd>
+          </dl>
+
+      </li>
+      <li>
+
+          <dl class="actionMenu deactivated" id="plone-contentmenu-display">
+            <dt class="actionMenuHeader label-">
+              <a href="http://localhost:8080/Plone/select_default_view" title="Select the view mode for this folder, or set a content item as its default view.">
+
+                    <span>Display</span>
+
+                    <span class="arrowDownAlternative">▼</span>
+
+              </a>
+            </dt>
+            <dd class="actionMenuContent">
+              <ul>
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=folder_listing" class="" id="folder-folder_listing" title="">
+
+                          <span class="subMenuTitle">Standard view</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=folder_summary_view" class="" id="folder-folder_summary_view" title="">
+
+                          <span class="subMenuTitle">Summary view</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=folder_full_view" class="" id="folder-folder_full_view" title="">
+
+                          <span class="subMenuTitle">All content</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=folder_tabular_view" class="" id="folder-folder_tabular_view" title="">
+
+                          <span class="subMenuTitle">Tabular view</span>
+                      </a>
+
+                    </li>
+
+
+                    <li>
+                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=atct_album_view" class="" id="folder-atct_album_view" title="">
+
+                          <span class="subMenuTitle">Thumbnail view</span>
+                      </a>
+
+                    </li>
+
+
+                    <li class="actionSeparator">
+
+                      <div id="folderDefaultPageDisplay" class="actionMenuSelected">
+
+                          <span class="subMenuTitle">Item: Welcome to Plone</span>
+                      </div>
+                    </li>
+
+
+                    <li class="actionSeparator">
+                      <a href="http://localhost:8080/Plone/select_default_page" class="link-overlay" id="folderChangeDefaultPage" title="Change the item used as default view in this folder" rel="#pb_2" style="cursor: pointer; ">
+
+                          <span class="subMenuTitle">Change content item as default view...</span>
+                      </a>
+
+                    </li>
+
+              </ul>
+            </dd>
+          </dl>
+
+      </li>
+
+  </ul>
+
+
+
+
+  </div></div>
+
+</body>
+</html>
