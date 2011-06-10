@@ -41,13 +41,21 @@
 
 function hideAllMenus() {
     jQuery('dl.actionMenu').removeClass('activated').addClass('deactivated');
+    jQuery('#plone_menu', window.parent.document).height(document.body.scrollHeight);
 }
 
 function toggleMenuHandler(event) {
+    var height;
     // swap between activated and deactivated
     jQuery(this).parents('.actionMenu:first')
         .toggleClass('deactivated')
         .toggleClass('activated');
+    if (jQuery('dl.actionMenu.activated').length) {
+        height = '100%';
+    } else {
+        height = document.body.scrollHeight;
+    }
+    jQuery('#plone_menu', window.parent.document).height(height);
     return false;
 }
 

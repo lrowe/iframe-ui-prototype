@@ -1,7 +1,6 @@
 /*jslint browser: true */
 (function () {
     var plone;
-    var offset = "40px";
     if (document.plone === undefined) {
         document.plone = {};
     }
@@ -15,18 +14,29 @@
         }
         iframe.id = iframe.name = name;
         for(attr in attrs) {
-            if(attrs.hasOwnProperty(attr))
+            if(attrs.hasOwnProperty(attr)) {
                 iframe.setAttribute(attr, attrs[attr]);
+            }
         }
         document.body.insertBefore(iframe, document.body.childNodes[0]);
         return iframe;
     }
-    document.body.style.marginTop = offset;
+
+    function showMenu() {
+        var offset = this.contentWindow.document.body.scrollHeight;
+        document.body.style.marginTop = offset+'px';
+        this.style.marginTop = '-'+offset+'px';
+        this.height = offset;
+    }
+
     plone.menu = createIframe('plone_menu', {
         src: 'menu.html',
-        style: 'border:0 none; padding:0; margin:0; position:fixed; width:100%; height: 500px; z-index: 9999; margin-top:-'+offset+';'
+        scrolling: 'no',
+        style: 'outline:1px solid red; border:0 none; padding:0; margin:0; position:fixed; width:100%; height:0; z-index: 9999;'
         });
+    plone.menu.onload = showMenu;
+
     plone.overlay = createIframe('plone_overlay', {
         style: 'border:0 none; padding:0; margin:0; display:none;'
         });
-})();
+}());
