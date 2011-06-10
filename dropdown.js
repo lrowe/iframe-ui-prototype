@@ -41,9 +41,22 @@
  * initializeMenus, jQuery, toggleMenuHandler 
 */
 
+function resizeIframe() {
+    var height;
+    var iframe = jQuery('#plone_menu', window.parent.document);
+    if (jQuery('dl.actionMenu.activated').length) {
+        iframe.height('100%');
+    } else {
+        height = jQuery('#visual-portal-wrapper').outerHeight();
+        iframe.height(height);
+        window.parent.document.body.style.marginTop = height+'px';
+        iframe[0].style.marginTop = '-'+height+'px';
+    }
+}
+
 function hideAllMenus() {
     jQuery('dl.actionMenu').removeClass('activated').addClass('deactivated');
-    jQuery('#plone_menu', window.parent.document).height(jQuery('#visual-portal-wrapper').height());
+    resizeIframe();
 }
 
 function toggleMenuHandler(event) {
@@ -52,12 +65,7 @@ function toggleMenuHandler(event) {
     jQuery(this).parents('.actionMenu:first')
         .toggleClass('deactivated')
         .toggleClass('activated');
-    if (jQuery('dl.actionMenu.activated').length) {
-        height = '100%';
-    } else {
-        height = jQuery('#visual-portal-wrapper').height();
-    }
-    jQuery('#plone_menu', window.parent.document).height(height);
+    resizeIframe();
     return false;
 }
 
@@ -95,6 +103,7 @@ function initializeMenus() {
     // add hide function to all links in the dropdown, so the dropdown closes
     // when any link is clicked
     jQuery('dl.actionMenu > dd.actionMenuContent').click(hideAllMenus);
+    jQuery(window).resize(resizeIframe);
 }
 
 jQuery(initializeMenus);

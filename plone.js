@@ -22,19 +22,11 @@
         return iframe;
     }
 
-    function showMenu() {
-        var offset = this.contentDocument.getElementById('visual-portal-wrapper').scrollHeight;
-        document.body.style.marginTop = offset+'px';
-        this.style.marginTop = '-'+offset+'px';
-        this.height = offset;
-    }
-
     plone.menu = createIframe('plone_menu', {
         src: 'menu.html',
         scrolling: 'no',
         style: 'outline:1px solid red; border:0 none; padding:0; margin:0; position:fixed; width:100%; height:0; z-index: 9999;'
         });
-    plone.menu.onload = showMenu;
 
     plone.overlay = createIframe('plone_overlay', {
         style: 'border:0 none; padding:0; margin:0; display:none;'
