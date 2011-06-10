@@ -1,10 +1,10 @@
 /*jslint browser: true */
 (function () {
     var plone;
-    if (document.plone === undefined) {
-        document.plone = {};
+    if (window.plone === undefined) {
+        window.plone = {};
     }
-    plone = document.plone;
+    plone = window.plone;
 
     function createIframe(name, attrs) {
         var attr;
