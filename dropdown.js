@@ -43,7 +43,7 @@
 
 function resizeIframe() {
     var height;
-    var iframe = jQuery('#plone_menu', window.parent.document);
+    var iframe = jQuery('#plone-menu', window.parent.document);
     if (jQuery('dl.actionMenu.activated').length) {
         iframe.height('100%');
     } else {
