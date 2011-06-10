@@ -38,6 +38,7 @@
     min-height: 100%;
     background-color: rgba(255,255,255,0.4);
     z-index:9998;
+    display: none;
 }
 
 #plone-overlay-wrapper {
@@ -48,19 +49,19 @@
     box-shadow: 0 0 3em 0.5em #666;
     -moz-box-shadow: 0 0 3em 0.5em #666;
     -webkit-box-shadow: 0 0 3em #666;
+    padding: 20px;
 }
 
 #plone-overlay {
     width: 100%;
-    margin: 1em;
 }
 
 /* default close button positioned on upper-left corner */
 #plone-overlay-close {
     background-image: url(plone_files/pb_close.png);
     position: absolute;
-    margin-left: -14px;
-    margin-top: -14px;
+    margin-left: -34px;
+    margin-top: -34px;
     cursor: pointer;
     height: 30px;
     width: 30px;

@@ -2,6 +2,7 @@
 /*global jQuery:false, document:false, window:false, location:false */
 
 $(window).load(function() {
+    jQuery('#plone-overlay-mask', window.parent.document)[0].style.display = 'block';
     jQuery('#plone-overlay', window.parent.document).height(
         jQuery('#visual-portal-wrapper').outerHeight()
     );
