@@ -23,7 +23,7 @@
     }
 
     function showMenu() {
-        var offset = this.contentWindow.document.body.scrollHeight;
+        var offset = this.contentDocument.getElementById('visual-portal-wrapper').scrollHeight;
         document.body.style.marginTop = offset+'px';
         this.style.marginTop = '-'+offset+'px';
         this.height = offset;

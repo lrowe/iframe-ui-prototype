@@ -43,7 +43,7 @@
 
 function hideAllMenus() {
     jQuery('dl.actionMenu').removeClass('activated').addClass('deactivated');
-    jQuery('#plone_menu', window.parent.document).height(document.body.scrollHeight);
+    jQuery('#plone_menu', window.parent.document).height(jQuery('#visual-portal-wrapper').height());
 }
 
 function toggleMenuHandler(event) {
@@ -55,7 +55,7 @@ function toggleMenuHandler(event) {
     if (jQuery('dl.actionMenu.activated').length) {
         height = '100%';
     } else {
-        height = document.body.scrollHeight;
+        height = jQuery('#visual-portal-wrapper').height();
     }
     jQuery('#plone_menu', window.parent.document).height(height);
     return false;
