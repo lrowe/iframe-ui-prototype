@@ -54,6 +54,8 @@ Shows how the existing forms could be integrated into a redesigned layout.
 CSS for overlay wrappers is injected into the parent document, simplifying the
 pages shown in the overlay iframe.
 
+(Scrollbar shows up because tinymce has some initiation going on after the
+iframe onload event is called to resize the window.)
 
 Open questions
 --------------
@@ -66,3 +68,5 @@ Open questions
 * The javascript could be further isolated by running it in a control iframe,
   allowing for jQuery to be used in plone.js. This is probably only desirably
   if the API of the ``plone`` object grew large.
+
+* How do we deal with overlay content that is more than one screenful long?
