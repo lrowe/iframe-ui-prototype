@@ -5,13 +5,12 @@
     var plone = window.parent.plone;
     plone.overlay.close(function () {
         $('.contentViews li.selected').removeClass('selected').addClass('plain');
-    })
+    });
     $().ready(function() {
         $('.contentViews a').click(function (e) {
             var link = $(this),
                 button = link.parents('li:first'),
-                menu = button.parents('ul:first'),
-                switch_menu;
+                menu = button.parents('ul:first');
             if (button.hasClass('selected')) {
                 return false;
             }
