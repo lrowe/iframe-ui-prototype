@@ -7,8 +7,9 @@
   <link rel="stylesheet" type="text/css" href="./plone_files/member.css" />
 
   <style type="text/css">
-  body { background: none; }
+  body { background: transparent; }
   </style>
+
 
   <script type="text/javascript" src="./plone_files/jquery.js"></script>
   <script type="text/javascript" src="./plone_files/jquery-integration.js"></script>
@@ -44,6 +45,7 @@
   <script type="text/javascript" src="./plone_files/tiny_mce_init.js"></script>
   <script type="text/javascript" src="./plone_files/comments.js"></script>
 
+  <script type="text/javascript" src="menu.js"></script>
   
 </head>
 <body>
@@ -59,27 +61,27 @@
 
 
                 <li id="contentview-folderContents" class="plain">
-                  <a href="http://localhost:8080/Plone/folder_contents">Contents</a>
+                  <a href="overlay.html">Contents</a>
                 </li>
 
 
-                <li id="contentview-view" class="selected">
-                  <a href="http://localhost:8080/Plone/front-page">View</a>
+                <li id="contentview-view" class="plain">
+                  <a href="overlay.html">View</a>
                 </li>
 
 
                 <li id="contentview-edit" class="plain">
-                  <a href="http://localhost:8080/Plone/front-page/edit">Edit</a>
+                  <a href="overlay.html">Edit</a>
                 </li>
 
 
                 <li id="contentview-contentrules" class="plain">
-                  <a href="http://localhost:8080/Plone/@@manage-content-rules">Rules</a>
+                  <a href="overlay.html">Rules</a>
                 </li>
 
 
                 <li id="contentview-local_roles" class="plain">
-                  <a href="http://localhost:8080/Plone/front-page/@@sharing">Sharing</a>
+                  <a href="overlay.html">Sharing</a>
                 </li>
 
 
@@ -102,7 +104,7 @@
 
           <dl class="actionMenu deactivated" id="plone-contentmenu-workflow">
             <dt class="actionMenuHeader label-state-published">
-              <a href="http://localhost:8080/Plone/front-page/content_status_history" title="Change the state of this item">
+              <a href="page.html" title="Change the state of this item">
 
                     <span>State:</span>
                     <span class="state-published">Published</span>
@@ -114,7 +116,7 @@
               <ul>
 
                     <li>
-                      <a href="http://localhost:8080/Plone/front-page/content_status_modify?workflow_action=reject" class="kssIgnore" id="workflow-transition-reject" title="Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published.">
+                      <a href="page.html" class="kssIgnore" id="workflow-transition-reject" title="Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published.">
 
                           <span class="subMenuTitle">Send back</span>
                       </a>
@@ -123,7 +125,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/front-page/content_status_modify?workflow_action=retract" class="kssIgnore" id="workflow-transition-retract" title="If you submitted the item by mistake or want to perform additional edits, this will take it back.">
+                      <a href="page.html" class="kssIgnore" id="workflow-transition-retract" title="If you submitted the item by mistake or want to perform additional edits, this will take it back.">
 
                           <span class="subMenuTitle">Retract</span>
                       </a>
@@ -132,7 +134,7 @@
 
 
                     <li class="actionSeparator">
-                      <a href="http://localhost:8080/Plone/front-page/content_status_history" class="kssIgnore" id="advanced" title="">
+                      <a href="page.html" class="kssIgnore" id="advanced" title="">
 
                           <span class="subMenuTitle">Advanced...</span>
                       </a>
@@ -148,7 +150,7 @@
 
           <dl class="actionMenu deactivated" id="plone-contentmenu-factories">
             <dt class="actionMenuHeader label-">
-              <a href="http://localhost:8080/Plone/folder_factories" title="Add new items inside this item">
+              <a href="page.html" title="Add new items inside this item">
 
                     <span>Add new…</span>
 
@@ -160,7 +162,7 @@
               <ul>
 
                     <li>
-                      <a href="http://localhost:8080/Plone/createObject?type_name=Topic" class="contenttype-topic" id="topic" title="An always-updated saved search that can be used to display items matching criteria you specify.">
+                      <a href="page.html" class="contenttype-topic" id="topic" title="An always-updated saved search that can be used to display items matching criteria you specify.">
 
                           <span class="subMenuTitle">Collection</span>
                       </a>
@@ -169,7 +171,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/createObject?type_name=Event" class="contenttype-event" id="event" title="Events can be shown in calendars.">
+                      <a href="page.html" class="contenttype-event" id="event" title="Events can be shown in calendars.">
 
                           <span class="subMenuTitle">Event</span>
                       </a>
@@ -178,7 +180,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/createObject?type_name=File" class="contenttype-file" id="file" title="Lets you upload a file to the site.">
+                      <a href="page.html" class="contenttype-file" id="file" title="Lets you upload a file to the site.">
 
                           <span class="subMenuTitle">File</span>
                       </a>
@@ -187,7 +189,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/createObject?type_name=Folder" class="contenttype-folder" id="folder" title="">
+                      <a href="page.html" class="contenttype-folder" id="folder" title="">
 
                           <span class="subMenuTitle">Folder</span>
                       </a>
@@ -196,7 +198,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/createObject?type_name=Image" class="contenttype-image" id="image" title="Images can be referenced in pages or displayed in an album.">
+                      <a href="page.html" class="contenttype-image" id="image" title="Images can be referenced in pages or displayed in an album.">
 
                           <span class="subMenuTitle">Image</span>
                       </a>
@@ -205,7 +207,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/createObject?type_name=Link" class="contenttype-link" id="link" title="Links to an internal or external resource.">
+                      <a href="page.html" class="contenttype-link" id="link" title="Links to an internal or external resource.">
 
                           <span class="subMenuTitle">Link</span>
                       </a>
@@ -214,7 +216,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/createObject?type_name=News+Item" class="contenttype-news-item" id="news-item" title="An announcement that will show up in news listings.">
+                      <a href="page.html" class="contenttype-news-item" id="news-item" title="An announcement that will show up in news listings.">
 
                           <span class="subMenuTitle">News Item</span>
                       </a>
@@ -223,7 +225,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/createObject?type_name=Document" class="contenttype-document" id="document" title="">
+                      <a href="page.html" class="contenttype-document" id="document" title="">
 
                           <span class="subMenuTitle">Page</span>
                       </a>
@@ -239,7 +241,7 @@
 
           <dl class="actionMenu deactivated" id="plone-contentmenu-display">
             <dt class="actionMenuHeader label-">
-              <a href="http://localhost:8080/Plone/select_default_view" title="Select the view mode for this folder, or set a content item as its default view.">
+              <a href="page.html" title="Select the view mode for this folder, or set a content item as its default view.">
 
                     <span>Display</span>
 
@@ -251,7 +253,7 @@
               <ul>
 
                     <li>
-                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=folder_listing" class="" id="folder-folder_listing" title="">
+                      <a href="page.html" class="" id="folder-folder_listing" title="">
 
                           <span class="subMenuTitle">Standard view</span>
                       </a>
@@ -260,7 +262,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=folder_summary_view" class="" id="folder-folder_summary_view" title="">
+                      <a href="page.html" class="" id="folder-folder_summary_view" title="">
 
                           <span class="subMenuTitle">Summary view</span>
                       </a>
@@ -269,7 +271,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=folder_full_view" class="" id="folder-folder_full_view" title="">
+                      <a href="page.html" class="" id="folder-folder_full_view" title="">
 
                           <span class="subMenuTitle">All content</span>
                       </a>
@@ -278,7 +280,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=folder_tabular_view" class="" id="folder-folder_tabular_view" title="">
+                      <a href="page.html" class="" id="folder-folder_tabular_view" title="">
 
                           <span class="subMenuTitle">Tabular view</span>
                       </a>
@@ -287,7 +289,7 @@
 
 
                     <li>
-                      <a href="http://localhost:8080/Plone/selectViewTemplate?templateId=atct_album_view" class="" id="folder-atct_album_view" title="">
+                      <a href="page.html" class="" id="folder-atct_album_view" title="">
 
                           <span class="subMenuTitle">Thumbnail view</span>
                       </a>
@@ -305,7 +307,7 @@
 
 
                     <li class="actionSeparator">
-                      <a href="http://localhost:8080/Plone/select_default_page" class="link-overlay" id="folderChangeDefaultPage" title="Change the item used as default view in this folder" rel="#pb_2" style="cursor: pointer; ">
+                      <a href="page.html" class="link-overlay" id="folderChangeDefaultPage" title="Change the item used as default view in this folder" rel="#pb_2" style="cursor: pointer; ">
 
                           <span class="subMenuTitle">Change content item as default view...</span>
                       </a>
